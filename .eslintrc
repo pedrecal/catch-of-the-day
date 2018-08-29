@@ -20,6 +20,13 @@
     "jest": true
   },
   "rules": {
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
     "no-debugger": 0,
     "no-alert": 0,
     "no-unused-vars": [
