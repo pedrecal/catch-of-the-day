@@ -6,11 +6,13 @@ import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 
 class App extends Component {
+  // States at the top
   state = {
     fishes: {},
     order: {},
   };
 
+  // Lifecycle events
   addFish = fish => {
     // Copia peixes
     const fishes = { ...this.state.fishes };
@@ -22,10 +24,21 @@ class App extends Component {
     });
   };
 
+  // Custom stuff
   loadSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
   };
 
+  addToOrder = key => {
+    // Copia o state
+    const order = { ...this.state.order };
+    // add ao pedido ou att ele
+    order[key] = order[key] + 1 || 1;
+    // call setstate pra att o state do obj
+    this.setState({ order });
+  };
+
+  // Render
   render() {
     return (
       <div className="catch-of-the-day">
